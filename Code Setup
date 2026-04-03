@@ -1,0 +1,59 @@
+To run this project, you need to upload the Arduino code to your board using Arduino IDE.
+First, install Arduino IDE on your system and connect your Arduino Uno using a USB cable. Open the code file in Arduino IDE and select the board as Arduino Uno. Then choose the correct COM port.
+If your LCD uses a library, install the required library before uploading the code.
+After that, click upload. Once the code is uploaded, the system will start detecting parking slots automatically.
+Make sure all hardware connections are correct before running.
+
+#include <LiquidCrystal.h>
+
+// LCD pin connection
+LiquidCrystal lcd(7, 8, 9, 10, 11, 12);
+
+// Ultrasonic sensor pins
+int trigPin = 2;
+int echoPin = 3;
+
+long duration;
+int distance;
+
+void setup() {
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+
+  lcd.begin(16, 2);
+  lcd.print("Parking System");
+  delay(2000);
+  lcd.clear();
+}
+
+void loop() {
+  // Trigger ultrasonic sensor
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  // Read echo time
+  duration = pulseIn(echoPin, HIGH);
+
+  // Calculate distance
+  distance = duration * 0.034 / 2;
+
+  lcd.setCursor(0, 0);
+  lcd.print("Distance: ");
+  lcd.print(distance);
+  lcd.print(" cm ");
+
+  lcd.setCursor(0, 1);
+
+  // Check slot status
+  if (distance < 10) {
+    lcd.print("Slot: OCCUPIED ");
+  } else {
+    lcd.print("Slot: FREE     ");
+  }
+
+  delay(500);
+}
