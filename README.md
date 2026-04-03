@@ -1,5 +1,5 @@
 # Smart-Parking-System
-mart Car Parking System
+Smart Car Parking System
 
 About the Project
 Finding a parking space in busy areas like malls, colleges, or hospitals is often difficult and time consuming. This project is designed to make parking easier by automatically detecting whether a slot is free or occupied.
