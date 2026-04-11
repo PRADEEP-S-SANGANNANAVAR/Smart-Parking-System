@@ -1,0 +1,5 @@
+The Smart Parking System works by using ultrasonic sensors to monitor each parking slot continuously.
+Each sensor is placed in front of a parking slot and measures the distance between the sensor and any object. When a vehicle enters the slot, the distance decreases. The system detects this change and marks the slot as occupied. When the vehicle leaves, the distance increases and the slot is marked as free.
+The Arduino acts as the main controller and processes the data from all sensors. Based on the measured distance values, it decides the status of each parking slot.
+The current status of the parking slots is displayed on the LCD screen in real time. This allows users to quickly check which slots are available without manually searching.
+The system runs continuously and updates automatically whenever there is any change in parking availability.
