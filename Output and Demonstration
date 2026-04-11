@@ -1,0 +1,9 @@
+The Smart Parking System was tested to check its ability to detect available and occupied parking slots.
+During operation, the ultrasonic sensors continuously measured the distance in each parking slot. When a vehicle was placed in front of the sensor, the system detected a reduced distance and marked the slot as occupied. When the vehicle was removed, the slot was updated as free.
+The Arduino processed the sensor data accurately and displayed the parking status on the LCD in real time. The system responded quickly to changes and updated the display without delay.
+The project worked reliably under different conditions and showed consistent performance. It helped in identifying parking availability easily without manual checking.
+Overall, the system demonstrated efficient parking management, real time monitoring, and reduced effort in finding available parking spaces.
+
+Software Demonstration:
+A simulation of the Smart Parking System is available below:
+[View Simulation on Tinkercad](https://www.tinkercad.com/things/34VpiPQ1pPG-smart-parking-system?sharecode=IokJ_rJYdXyT8Dxh-uglpasNmLOZijbrwaXKZHa54nI)
